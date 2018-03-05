@@ -1,0 +1,406 @@
+{
+	"info": {
+		"name": "messenger",
+		"_postman_id": "70a07493-cfc6-4c67-b907-ac093e315456",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Message",
+			"description": "",
+			"item": [
+				{
+					"name": "Comment",
+					"description": "",
+					"item": [
+						{
+							"name": "AddComment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"message\" : \"Im comment.\"\n}"
+								},
+								"url": {
+									"raw": "{{env.url}}/messenger/messages/1/comments/",
+									"host": [
+										"{{env.url}}"
+									],
+									"path": [
+										"messenger",
+										"messages",
+										"1",
+										"comments",
+										""
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "GetComments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "{{env.url}}/messenger/messages/1/comments/1",
+									"host": [
+										"{{env.url}}"
+									],
+									"path": [
+										"messenger",
+										"messages",
+										"1",
+										"comments",
+										"1"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "GetAllMessages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/messages",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"messages"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleMessage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/messages/{{param.msgid}}",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"messages",
+								"{{param.msgid}}"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AddMessage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"bsun\",\n    \"message\": \"lolol\"\n}"
+						},
+						"url": {
+							"raw": "{{env.url}}/messenger/messages/",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"messages",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSingleMessage",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"bsun\",\n    \"message\": \"Updated message 4 AAAAAAGGGGGGG.\"\n}"
+						},
+						"url": {
+							"raw": "{{env.url}}/messenger/messages/4",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"messages",
+								"4"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSingleMessage",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/messages/5",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"messages",
+								"5"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"description": "",
+			"item": [
+				{
+					"name": "HelloWorld",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/helloworld",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"helloworld"
+							]
+						},
+						"description": "Simple test api."
+					},
+					"response": []
+				},
+				{
+					"name": "MessageService",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/messages/test",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"messages",
+								"test"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAllProfiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/profiles",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"profiles"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProfilesWithParameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/profiles?profileName=bsun5",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"profiles"
+							],
+							"query": [
+								{
+									"key": "profileName",
+									"value": "bsun5",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/profiles/bsun",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"profiles",
+								"bsun"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AddSingleProfile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Rick\",\n    \"lastName\": \"S\",\n    \"profileName\": \"bsun6\"\n}"
+						},
+						"url": {
+							"raw": "{{env.url}}/messenger/profiles",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"profiles"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSingleProfile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Rick\",\n    \"id\": 5,\n    \"lastName\": \"Ssssss\"\n}"
+						},
+						"url": {
+							"raw": "{{env.url}}/messenger/profiles/bsun5",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"profiles",
+								"bsun5"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSingleProfile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{env.url}}/messenger/profiles/bsun5",
+							"host": [
+								"{{env.url}}"
+							],
+							"path": [
+								"messenger",
+								"profiles",
+								"bsun5"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
